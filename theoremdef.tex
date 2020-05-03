@@ -1,0 +1,84 @@
+\makeatletter
+\newtheoremstyle{mplain}%
+  {\item[\hskip\labelsep \theorem@headerfont ##1\ ##2\theorem@separator]}%
+  {\item[\hskip\labelsep \theorem@headerfont ##1\ ##2]\theorem@headerfont (##3)\theorem@separator}
+  
+\newtheoremstyle{mbreak}%
+  {\item[\rlap{\vbox{\hbox{\hskip\labelsep \theorem@headerfont ##1\ ##2\theorem@separator}\hbox{\strut}}}]}%
+  {\item[\hskip\labelsep \theorem@headerfont ##1\ ##2]{\theorem@headerfont (##3)\theorem@separator}\newline}
+\newtheoremstyle{zplain}%
+  {\item[\hskip\labelsep \theorem@headerfont ##1\ ##2\theorem@separator]}%
+  {\item[\hskip\labelsep \theorem@headerfont ##1\ ##2\ (##3)\theorem@separator]}
+\makeatother
+
+\qedsymbol{$\boxtimes$}
+
+%Definicja
+\theoremstyle{plain}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\normalfont}
+\theoremseparator{.}
+\theoremindent0cm
+\theoremnumbering{arabic}
+\theoremsymbol{}
+\newtheorem{definition}{Definicja}[chapter]
+
+%Twierdzenie
+\theoremstyle{break}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\normalfont\itshape}
+\theoremseparator{.}
+\theoremindent0cm
+\theoremnumbering{arabic}
+\theoremsymbol{}
+\newtheorem{theorem}{Twierdzenie}[chapter]
+
+%Stwierdzenie
+\theoremstyle{break}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\normalfont\itshape}
+\theoremseparator{.}
+\theoremindent0cm
+\theoremnumbering{arabic}
+\theoremsymbol{}
+\newtheorem{statement}{Stwierdzenie}[chapter]
+
+%Dowód
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\normalfont\itshape}
+\theorembodyfont{\normalfont}
+\theoremseparator{:}
+\theoremindent0cm
+\theoremnumbering{arabic}
+\theoremsymbol{}
+\newtheorem{proof}{Dowód}[chapter]
+
+%Przykład
+\theoremstyle{plain}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\normalfont}
+\theoremseparator{.}
+\theoremindent0cm
+\theoremnumbering{arabic}
+\theoremsymbol{}
+\newtheorem{example}{Przykład}[chapter]
+
+%Wniosek do twierdzenia
+\theoremstyle{break}
+\theoremheaderfont{\normalfont\bfseries\itshape}
+\theorembodyfont{\normalfont}
+\theoremseparator{.}
+\theoremindent0cm
+\theoremnumbering{arabic}
+\theoremsymbol{}
+\newtheorem{thmcoro}{Wniosek}[theorem]
+
+%Uwaga
+\theoremstyle{break}
+\theoremheaderfont{\normalfont\bfseries\itshape}
+\theorembodyfont{\normalfont}
+\theoremseparator{.}
+\theoremindent0cm
+\theoremnumbering{arabic}
+\theoremsymbol{}
+\newtheorem{remark}{Uwaga}[chapter]

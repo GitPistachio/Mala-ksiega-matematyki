@@ -1,0 +1,55 @@
+\documentclass[a4paper, oneside, 12pt]{report}
+
+\usepackage[MeX]{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[left=3.0cm, right=2.0cm, top=2.5cm, bottom=2.5cm]{geometry} % ustawienia marginesów
+\usepackage{tocloft} % obsługa spisu treści
+\usepackage[toc, page]{appendix}
+\usepackage{bbm} % zestaw czcionek matematycznych np. do zbioru liczb rzeczywistych, wymiernych itp.
+\usepackage{amsmath, amssymb} % rozszerzenie matematycznych środowisk oraz dodatkowe symbole matematyczne
+\usepackage[amsmath, thmmarks]{ntheorem} % pozwala na większą kontrolę nad podstawowymi środowiskami matematycznymi jak def. tw. itp
+\usepackage{colonequals} % znaki przypisania np. :=, ::=, =: ...
+\usepackage{mathrsfs} % dodatkowe symbole, matematyczny alfabet
+\usepackage{indentfirst} % pakiet ten sprawia, że do każdego akapitu dodawane jest wcięcie, zgodnie z polskimi standardami drukarskimi.
+\usepackage{caption} % obsługa opisów pod tabelami, figurami itp.
+\usepackage{enumerate} % rozszerzenie możliwości list
+\usepackage[perpage, symbol]{footmisc} % kolekcja sposobów na zamianę składku przypisów. Pierwszy parametr perpage ustawia resetowanie numerowania przypisów per strona, drugi ustawia, że zamiast numerów chcę używać symboli dla kążdych kolenych przypisów
+
+% zdefiniowanie zbioru symboli jakie mają być używane do odnotowywania przypisów
+\DefineFNsymbols{dagger}{{$\dagger$}{$\ddagger$}{$\ddagger\dagger$}{$\ddagger\ddagger$}}
+
+% wybór zbioru symboli
+\setfnsymbol{dagger}
+
+% interlinia 1.5
+\linespread{1.3}
+
+% ustawia francuskie zwyczaje typograficzne (w tym przypadku przestrzen pozostawioną po zakończeniu zdania).
+\frenchspacing
+
+% ustawienie numerowania równań zależnego od podsekcji
+\numberwithin{equation}{section}
+
+% dodanie kropek w spisie treści
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+% definicje struktur theorem, niezbędna paczka amssymb
+\input{theoremdef.tex}
+
+% przydane makra
+\newcommand{\mcp}{\mathcal{P}} %rodzina zbiorów
+\renewcommand{\emptyset}{\text{\O}} % przedefiniowanie zbioru pustego
+\renewcommand{\iff}{\Leftrightarrow} % przedefiniowanie symbolu wtedy i tylko wtedy
+\renewcommand{\implies}{\Rightarrow} % przedefiniowanie symbolu implikacji
+\newcommand{\nforall}[1]{\forall_{#1}\:} % dodanie spacji po symbolu dla każdego
+
+\begin{document}
+	% wstawienie spisu treści
+	\tableofcontents
+
+    % tymczasowa sekcja zbiorów
+     \input{sets.tex}
+     
+	% teoria dotycząca szeroko rozumianych przestrzeni bez zagłębiania się w szczegóły elementów do nich należących
+	\input{spaces.tex}
+\end{document}
