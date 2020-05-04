@@ -26,4 +26,13 @@
         \label{def:limit_point}
         Niech dany będzie zbiór $A$ przestrzeni topologicznej T\textsubscript{1}. \emph{Punktem skupienia zbioru} jest taki punkt $x$ zadanej przestrzeni, dla którego przekrój dowolnego otoczenia punktu $x$ ze zbiorem $A$ jest niepusty.
     \end{definition}
+    \begin{definition}[Metryka]
+        \label{def:metric}
+        Niech $X$ będzie niepustym zbiorem. \emph{Metryką} w zbiorze $X$ nazywamy funkcję $d\colon X\times X\rightarrow [0, +\infty),$ która dla dowolnych $a, b, c\in X$ spełnia warunki:
+        \begin{enumerate}[(i)]
+            \item niezdegenerowanie tzn. $d(a, b) = 0 \iff a = 0$,
+            \item symetria tzn. $d(a, b) = d(b, a),$
+            \item nierówność trójkąta tzn. $d(a, b) \leq d(a, b) + d(c, b)$.
+        \end{enumerate}            
+    \end{definition}
 }
