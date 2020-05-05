@@ -28,11 +28,30 @@
     \end{definition}
     \begin{definition}[Metryka]
         \label{def:metric}
-        Niech $X$ będzie niepustym zbiorem. \emph{Metryką} w zbiorze $X$ nazywamy funkcję $d\colon X\times X\rightarrow [0, +\infty),$ która dla dowolnych $a, b, c\in X$ spełnia warunki:
+        \emph{Metryką} w zbiorze $X$ nazywamy funkcję $d\colon X\times X\rightarrow \mbr,$ która dla dowolnych $x, y, z\in X$ spełnia warunki:
         \begin{enumerate}[(i)]
-            \item niezdegenerowanie tzn. $d(a, b) = 0 \iff a = 0$,
-            \item symetria tzn. $d(a, b) = d(b, a),$
-            \item nierówność trójkąta tzn. $d(a, b) \leq d(a, b) + d(c, b)$.
+            \item $d(x, y) = 0 \iff a = 0$ (niezdegenerowanie),
+            \item $d(x, y) = d(y, x)$ (symetria),
+            \item nierówność trójkąta tzn. $d(x, y) \leq d(x, z) + d(z, y)$ (nierówność trójkąta).
         \end{enumerate}            
     \end{definition}
+    Liczba $d(x, y)$ nazywa się odległością pomiędzy punktami $x, y\in X$ w metryce $d$.
+    \begin{definition}[Przestrzeń metryczna]
+        \label{def:metric_space}
+        Zbiór $X$ z ustaloną w nim metryką~$d$ nazywamy \emph{przestrzenią metryczną} i oznaczamy $(X, d)$.
+    \end{definition}
+    \begin{definition}[Kula]
+        \label{def:ball}
+        \emph{Kulą (otwartą)} w przestrzeni metrycznej $(X, d)$ o środku w punkcie $x_0\in X$ i promieniu $r > 0$ nazywamy zbiór
+        \begin{equation}
+            B(x_0, r) \colonequals \{x\in X\colon d(x_0, x) < r\}.
+        \end{equation}
+    \end{definition}
+    \begin{statement}
+        Niech $(X, d)$ będzie przestrzenią metryczną. Rodzina podzbiorów zbioru $X$:
+        \begin{equation}
+            \tau(d) \colonequals \{U\subseteq X\colon\nforall{x_0\in U}\nexists{r>0} B(x_0, r)\subseteq U\}
+        \end{equation}
+        jest topologią w $X$, spełniającą warunek Hausdorffa.
+    \end{statement}
 }
