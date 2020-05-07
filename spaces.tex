@@ -46,6 +46,12 @@
     \begin{definition}[Przestrzeń T\textsubscript{2}]
         Przestrzeń topologiczną $(X, \tau)$ nazywamy \emph{przestrzenią T\textsubscript{1}} lub \emph{przestrzenią Hausdorffa}, jeśli spełnia własność Hausdorffa.
     \end{definition}
+    \begin{remark}
+        Każda przestrzeń T\textsubscript{2} jest również przestrzenią T\textsubscript{1}.
+    \end{remark}
+    \begin{proof}
+        Zależność wynika wprost z definicji przestrzeni T\textsubscript{1} i  T\textsubscript{2}. Jeżeli dla dowolnych dwóch różnych punktów tej przestrzeni istnieją otoczenia tych punktów, których przecięcie jest zbiorem pustym to tym bardziej każde z tych otoczeń nie zawiera drugiego z punktów.  \qed
+    \end{proof}
     \begin{definition}[Kula]
         \label{def:ball}
         \emph{Kulą (otwartą)} w przestrzeni metrycznej $(X, d)$ o środku w punkcie $x_0\in X$ i promieniu $r > 0$ nazywamy zbiór
@@ -53,11 +59,18 @@
             B(x_0, r) \colonequals \{x\in X\colon d(x_0, x) < r\}.
         \end{equation}
     \end{definition}
-    \begin{statement}
+    \begin{theorem}
         Niech $(X, d)$ będzie przestrzenią metryczną. Rodzina podzbiorów zbioru $X$:
         \begin{equation}
+            \label{eq:metric_topology}
             \tau(d) \colonequals \{U\subseteq X\colon\nforall{x_0\in U}\nexists{r>0} B(x_0, r)\subseteq U\}
         \end{equation}
         jest topologią w $X$, spełniającą warunek Hausdorffa.
-    \end{statement}
+    \end{theorem}
+    \begin{proof}
+        Zacznę od pokazania, że $\tau(d)$ jest topologią. Zbiór $\emptyset$ z definicji nie zawiera żadnych elementów także warunek z \ref{eq:metric_topology} jest automatycznie spełniony. Zaś zbiór $X$ jest całą przestrzenią także dowolny zbiór w tym dowolna kula w tej przestrzeni jest podzbiorem $X$. Wobec tego $\emptyset, X \in \tau(d)$. Jeśli $U_1,\ldots,U_n$ należą do $\tau(d)$ oraz $x_0\in U_1\cap\ldots\cap U_n$ i dla każdego $i = 1, \ldots, k$ istnieje promień $r_i > 0$ taki, że $B(x_0, r_i) \subseteq U_i$ to dla $r\colonequals\min\{r_1,\ldots,r_k\}$ zachodzi inkluzja $B(x_0, r)\subseteq U_1\cap\ldots\cap U_n$. Jeśli $\{U_i\}_{i\in I}$ oraz $x_0\in\bigcup_{i\in I}U_i$ to istnieje $i_0$ także, że $x_0\in U_{i_0}$ oraz $r$ takie, że $B(x_0, r)\in U_{i_0}\subseteq \bigcup_{i\in I}U_i $ \qed
+    \end{proof}
+    \begin{thmcoro}
+        Każda przestrzeń metryczna $(X, d)$ z topologią generowaną w zbiorze $X$ prze metrykę $d$ jest przestrzenią T\textsubscript{2}. Oznaczamy ją przez $(X, \tau(d))$.
+    \end{thmcoro}
 }
