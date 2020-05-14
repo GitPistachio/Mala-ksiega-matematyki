@@ -68,15 +68,17 @@
         jest topologią w $X$, spełniającą warunek Hausdorffa.
     \end{theorem}
     \begin{proof}
-        Zacznę od pokazania, że $\tau(d)$ jest topologią udowadniając każdy z warunków z osobna.
+        Zacznę od pokazania, że $\tau(d)$ jest topologią udowadniając osobno każdy z warunków definicji topologi.
         
-        Warunek (\ref{def:topology_i}). Zbiór $\emptyset$ z definicji nie zawiera żadnych elementów także warunek by dla każdego punktu tego zbioru istniała kula o środku w tym punkcie zawarta w tym zbiorze jest automatycznie spełniony. Znów zbiór $X$ jest całą przestrzenią także dowolny zbiór w tym dowolna kula w tej przestrzeni jest podzbiorem $X$.
+        Dowód warunku (\ref{def:topology_i}). Zbiór $\emptyset$ z definicji nie zawiera żadnych elementów także warunek by dla każdego punktu tego zbioru istniała kula o środku w tym punkcie zawarta w tym zbiorze jest automatycznie spełniony. Znów zbiór $X$ jest całą przestrzenią także dowolny zbiór w tym dowolna kula w tej przestrzeni jest podzbiorem $X$.
                 
-        Warunek (\ref{def:topology_ii}). Jeśli $U_1,\ldots,U_n$ należą do $\tau(d)$ oraz $x_0\in U_1\cap\ldots\cap U_n$ i dla każdego $i = 1, \ldots, k$ istnieje promień $r_i > 0$ taki, że $B(x_0, r_i) \subseteq U_i$ to dla $r\colonequals\min\{r_1,\ldots,r_k\}$ zachodzi inkluzja $B(x_0, r)\subseteq U_1\cap\ldots\cap U_n$. 
+        Dowód warunku (\ref{def:topology_ii}). Jeśli zbiory $U_1,\ldots,U_n$ należą do $\tau(d)$ oraz punkt $x_0\in U_1\cap\ldots\cap U_n$ i dla każdego $i = 1, \ldots, k$ istnieje promień $r_i > 0$ taki, że $B(x_0, r_i) \subseteq U_i$ to dla $r\colonequals\min\{r_1,\ldots,r_k\}$ zachodzi inkluzja $B(x_0, r)\subseteq U_1\cap\ldots\cap U_n$. 
         
-        Warunek (\ref{def:topology_iii}). Jeśli $\{U_i\in\tau(d)\}_{i\in I}$ oraz $x_0\in\bigcup_{i\in I}U_i$ to istnieje~$i_0$ także, że $x_0\in U_{i_0}$ oraz $r$ takie, że $B(x_0, r)\in U_{i_0}\subseteq \bigcup_{i\in I}U_i $, to $\{U_i\}_{i\in I}\in \tau(d)$. Co kończy nam dowód, że $\tau(d)$ jest topologią. 
+        Dowód warunku (\ref{def:topology_iii}). Niech dana będzie dowolna rodzina zbiorów $\{U_i\in\tau(d)\}_{i\in I}$ oraz punkt $x_0\in\bigcup_{i\in I}U_i$, wtedy istnieje~$i_0$ także, że $x_0\in U_{i_0}$ oraz promień $r > 0$ taki, że $B(x_0, r)\in U_{i_0}\subseteq \bigcup_{i\in I}U_i $, to $\{U_i\}_{i\in I}\in \tau(d)$. Kończy to dowód, że $\tau(d)$ jest topologią. 
         
-        Kula $B(x, r)$ o środku w $x\in X$ i promieniu $r>0$ należy do $\tau(d).$ Mianowicie dla każdego $y\in B(x, r)$  Niech $x, y$ będą dwoma różnymi punktami w $X$ oraz $r = d(x, y)/2$. Z własności niezdegenerowania oraz dodatniości metryki mamy, że $d(x, y) >0$ także $r> 0$. Wtedy kule $B(x, r), B(y, r)$ są otoczeniami tych punktów ponieważ należą do $\tau(d)$ oraz ich przecięcie jest zbiorem pustym. Załóżmy, że drugie stwierdzenie jest nieprawdziwe, czyli istnieje punkt $z$ należący do obu tych kul, wtedy $d(x, z) < r$ oraz $d(y, z) < r$. $d(x, y) \leq d(x, z) + d(z, y) = d(x, z) + d(y, z) < 2r = d(x, y).$ Co daje sprzeczność i koczy dowód spełnienia własności Hausdorffa jak i cały dowód. \qed
+        Dowód drugiej części tezy zacznę od pokazania, że dowolna kula $B(x, r)$ o środku w $x\in X$ i promieniu $r>0$ należy do $\tau(d).$ Niech $y\in B(x, r)$, wtedy kula $B(y, r_1)$, gdzie $r_1 \colonequals r - d(x, y)$ jest podzbiorem $B(x, r)$. Założę nie wprost, że istniej takie $z\in B(y, r_1)$ oraz $z\notin B(x, r)$. Wtedy dostajemy, że $d(y, z) < r_1$ oraz $d(x, z)\geq r$. Następnie z nierówności trójkąta oraz symetrii otrzymujemy 
+        $$r = d(x, y) \leq d(x, z) + d(y, z) = r - r_1 + d(y, z) < r - r_1 + r = r.$$
+        Mianowicie dla każdego $y\in B(x, r)$  Niech $x, y$ będą dwoma różnymi punktami w $X$ oraz $r = d(x, y)/2$. Z własności niezdegenerowania oraz dodatniości metryki mamy, że $d(x, y) >0$ także $r> 0$. Wtedy kule $B(x, r), B(y, r)$ są otoczeniami tych punktów ponieważ należą do $\tau(d)$ oraz ich przecięcie jest zbiorem pustym. Załóżmy, że drugie stwierdzenie jest nieprawdziwe, czyli istnieje punkt $z$ należący do obu tych kul, wtedy $d(x, z) < r$ oraz $d(y, z) < r$. $d(x, y) \leq d(x, z) + d(z, y) = d(x, z) + d(y, z) < 2r = d(x, y).$ Co daje sprzeczność i koczy dowód spełnienia własności Hausdorffa jak i cały dowód. \qed
     \end{proof}
     \begin{thmcoro}
         Każda kula $B(x_0, r)$ o środku w $x_0\in X$ i promieniu $r>0$ jest zbiorem otwartym tzn. należy do $\tau(d).$ Co uzasadnia nazywanie kuli kulą otwartą.
