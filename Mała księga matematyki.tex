@@ -14,7 +14,7 @@
 \usepackage{caption} % obsługa opisów pod tabelami, figurami itp.
 \usepackage{enumerate} % rozszerzenie możliwości list
 \usepackage[perpage, symbol]{footmisc} % kolekcja sposobów na zamianę składku przypisów. Pierwszy parametr perpage ustawia resetowanie numerowania przypisów per strona, drugi ustawia, że zamiast numerów chcę używać symboli dla kążdych kolenych przypisów
-
+\usepackage[type={CC}, modifier={by-nc-nd}, version={3.0}, lang={Polish}]{doclicense}
 % zdefiniowanie zbioru symboli jakie mają być używane do odnotowywania przypisów
 \DefineFNsymbols{dagger}{{$\dagger$}{$\ddagger$}{$\ddagger\dagger$}{$\ddagger\ddagger$}}
 
@@ -40,6 +40,7 @@
 \input{macros.tex}
 
 \begin{document}
+    \doclicenseThis
 	% wstawienie spisu treści
 	\tableofcontents
 
